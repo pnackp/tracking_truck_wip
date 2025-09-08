@@ -4,6 +4,10 @@
 #include "mqtt.h"
 #include "ui.h"
 
+#define temperature 0
+#define lat 0
+#define lon 0
+
 void setup() {
   LCD_Init();     
   Lvgl_Init();   
@@ -21,7 +25,7 @@ const unsigned long interval = 2000;
 void loop() {
   wifi_status();
   if (WiFi.status() == WL_CONNECTED && millis() - lastPublish >= interval) {
-    publish_();
+    publish_(temperature,lat,lon);
     lastPublish = millis();
   }
   ui_update();

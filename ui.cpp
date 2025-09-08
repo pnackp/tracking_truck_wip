@@ -26,7 +26,6 @@ void ui_init() {
   lv_obj_set_style_border_color(container, lv_color_hex(0x808080), 0); 
   lv_obj_set_style_border_opa(container, LV_OPA_COVER, 0);
 
-  
   label = create_box(container, "WiFi : Initializing...");
   mqtt_label = create_box(container, "MQTT : Initializing...");
 
