@@ -2,6 +2,7 @@
 #include "LVGL_Driver.h"
 #include "Wifi_setup.h"
 #include "mqtt.h"
+#include "ui.h"
 
 void setup() {
   LCD_Init();     
@@ -10,6 +11,8 @@ void setup() {
   while(WiFi.status() != WL_CONNECTED) {
     delay(500);
   } 
+  ui_init();
+  mqtt_setup();
 }
 
 unsigned long lastPublish = 0;
@@ -21,6 +24,7 @@ void loop() {
     publish_();
     lastPublish = millis();
   }
+  ui_update();
   Timer_Loop();
   delay(2000);
 }

@@ -7,8 +7,11 @@ const char* mqtt_topic = "Sensor/truck";
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-void publish_(){
+void mqtt_setup(){
   client.setServer(mqtt_server, mqtt_port);
+}
+
+void publish_(){
   if(!client.connected()){
     client.connect("ESP32_Client");
     delay(300);

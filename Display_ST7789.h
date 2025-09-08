@@ -15,26 +15,22 @@
 #define Resolution      10       
 
 
-// ---------------------------
-// เลือกโหมดจอ
-// ---------------------------
-// 1 = Landscape (แนวนอน)
-// 0 = Portrait  (แนวตั้ง)
+
 #define HORIZONTAL 1
 
 #if HORIZONTAL
-    #define LCD_WIDTH   320   // ความกว้างจอ
-    #define LCD_HEIGHT  172   // ความสูงจอ
+    #define LCD_WIDTH   320   
+    #define LCD_HEIGHT  172  
 #else
     #define LCD_WIDTH   172
     #define LCD_HEIGHT  320
 #endif
 
-// ปิด Offset เพื่อให้ UI เต็มจอ
+
 #define Offset_X 0
 #define Offset_Y 34
 
-// ฟังก์ชันจอ
+
 void LCD_SetCursor(uint16_t x1, uint16_t y1, uint16_t x2,uint16_t y2);
 void LCD_Init(void);
 void LCD_SetCursor(uint16_t Xstart, uint16_t Ystart, uint16_t Xend, uint16_t  Yend);
