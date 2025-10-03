@@ -1,0 +1,38 @@
+#include "max31865_module.h"
+
+Adafruit_MAX31865 thermo = Adafruit_MAX31865(2, 3, 4, 5);
+
+#define RREF      4300.0
+#define RNOMINAL  1000.0
+
+void Max_Init(){
+  thermo.begin(MAX31865_3WIRE);
+}
+
+float Max_Read(){
+  uint8_t fault = thermo.readFault();
+  if (fault) {
+    Serial.print("Fault 0x"); Serial.println(fault, HEX);
+    if (fault & MAX31865_FAULT_HIGHTHRESH) {
+      Serial.println("RTD High Threshold"); 
+    }
+    if (fault & MAX31865_FAULT_LOWTHRESH) {
+      Serial.println("RTD Low Threshold"); 
+    }
+    if (fault & MAX31865_FAULT_REFINLOW) {
+      Serial.println("REFIN- > 0.85 x Bias"); 
+    }
+    if (fault & MAX31865_FAULT_REFINHIGH) {
+      Serial.println("REFIN- < 0.85 x Bias - FORCE- open"); 
+    }
+    if (fault & MAX31865_FAULT_RTDINLOW) {
+      Serial.println("RTDIN- < 0.85 x Bias - FORCE- open"); 
+    }
+    if (fault & MAX31865_FAULT_OVUV) {
+      Serial.println("Under/Over voltage"); 
+    }
+    thermo.clearFault();
+  }
+  Serial.println();
+  return thermo.temperature(RNOMINAL, RREF);
+}

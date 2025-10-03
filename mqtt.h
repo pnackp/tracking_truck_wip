@@ -5,5 +5,5 @@
 
 extern PubSubClient client;
 
-void publish_(int8_t temperature,float lat,float lon);
+void publish_(String &payload);
 void mqtt_setup();

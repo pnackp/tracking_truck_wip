@@ -11,17 +11,10 @@ void mqtt_setup() {
   client.setServer(mqtt_server, mqtt_port);
 }
 
-void publish_(int8_t temperature, float lat, float lon) {
+void publish_(String &payload) {
   if (!client.connected()) {
     client.connect("ESP32_Client");
     delay(300);
   }
-  StaticJsonDocument<100> doc;
-  doc["temperature"] = temperature;
-  doc["latitude"] = lat;
-  doc["longitude"] = lon;
-  String jsonStr;
-  char buffer[100];
-  serializeJson(doc, buffer);
-  client.publish(mqtt_topic, buffer);
+  client.publish(mqtt_topic, payload.c_str());
 }

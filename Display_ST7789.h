@@ -4,7 +4,7 @@
 
 // SPI Config
 #define SPIFreq                        27000000
-#define EXAMPLE_PIN_NUM_MISO           5
+#define EXAMPLE_PIN_NUM_MISO           -1
 #define EXAMPLE_PIN_NUM_MOSI           6
 #define EXAMPLE_PIN_NUM_SCLK           7
 #define EXAMPLE_PIN_NUM_LCD_CS         14

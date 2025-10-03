@@ -1,6 +1,6 @@
 #include "Wifi_setup.h"
 
-const char * ssid = "esp";
+const char * ssid = "NACK 2.4p";
 const char * pass = "0828231976";
 
 void wifi_init(){
