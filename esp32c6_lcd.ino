@@ -10,14 +10,12 @@ void setup() {
   Lvgl_Init();  
   ui_init(); 
   wifi_init();
-  Serial.println("ui");
   Sensor_Init();
   while (WiFi.status() != WL_CONNECTED) {
     ui_update();          
     Timer_Loop();          
     delay(10);             
   }
-  Serial.println("Connected");
   mqtt_setup();
 }
 

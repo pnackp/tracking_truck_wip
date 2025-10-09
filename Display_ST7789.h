@@ -3,8 +3,8 @@
 #include <SPI.h>
 
 // SPI Config
-#define SPIFreq                        27000000
-#define EXAMPLE_PIN_NUM_MISO           -1
+#define SPIFreq                        25000000
+#define EXAMPLE_PIN_NUM_MISO           5
 #define EXAMPLE_PIN_NUM_MOSI           6
 #define EXAMPLE_PIN_NUM_SCLK           7
 #define EXAMPLE_PIN_NUM_LCD_CS         14
@@ -12,9 +12,7 @@
 #define EXAMPLE_PIN_NUM_LCD_RST        21
 #define EXAMPLE_PIN_NUM_BK_LIGHT       22
 #define Frequency       1000     
-#define Resolution      10       
-
-
+#define Resolution      10        
 
 #define HORIZONTAL 1
 
