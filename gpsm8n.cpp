@@ -1,13 +1,11 @@
 #include "gpsm8n.h"
 
-static const int RXPin = 16;
-static const int TXPin = 15;
 static const uint32_t GPSBaud = 9600;
 TinyGPSPlus gps;
 HardwareSerial gpsSerial(2);
 
 void Gps_Init() {
-  gpsSerial.begin(GPSBaud, SERIAL_8N1, RXPin, TXPin);
+  gpsSerial.begin(GPSBaud, SERIAL_8N1, 16, 17);
 }
 
 void Gps_Update() {
