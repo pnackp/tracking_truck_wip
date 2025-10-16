@@ -5,6 +5,7 @@
 #include "bmpSensor.h"
 #include "Wifi_setup.h"
 #include "mqtt.h"
+#include <Wire.h>
 #define OLED_RESET -1
 
 void ui_init();

@@ -13,15 +13,15 @@ String sensor_value() {
   float lon = Gps_Read_Lon();
   float temp = Max_Read();       
   float pressure = bmp_Read(); 
-
+  float temp_o = bmp_temp();
   StaticJsonDocument<200> doc; 
   doc["latitude"] = lat;
   doc["longitude"] = lon;
   doc["temperature"] = temp;    
-  doc["pressure"] = pressure;    
-
+  doc["pressure"] = pressure / 100;    
+  doc["temp-out"] = temp_o;
   String result;
   serializeJson(doc, result);
-
+  ui_update();
   return result;  
 }

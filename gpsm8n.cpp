@@ -2,10 +2,11 @@
 
 static const uint32_t GPSBaud = 9600;
 TinyGPSPlus gps;
-HardwareSerial gpsSerial(2);
+HardwareSerial gpsSerial(1);
 
 void Gps_Init() {
-  gpsSerial.begin(GPSBaud, SERIAL_8N1, 16, 17);
+  gpsSerial.begin(GPSBaud, SERIAL_8N1, 19, 18);
+  Serial.begin(115200);
 }
 
 void Gps_Update() {
@@ -15,15 +16,15 @@ void Gps_Update() {
 }
 
 double Gps_Read_Lat() {
-  if (gps.location.isUpdated()) {
+  if (gps.location.isValid()) {   // แทน isUpdated()
     return gps.location.lat();
   }
   return 0.0;
 }
 
 double Gps_Read_Lon() {
-  if (gps.location.isUpdated()) {
-    return gps.location.lng(); // TinyGPS++ ใช้ lng() ไม่ใช่ lon()
+  if (gps.location.isValid()) {
+    return gps.location.lng();
   }
   return 0.0;
 }

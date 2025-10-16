@@ -2,11 +2,11 @@
 
 Adafruit_MAX31865 thermo = Adafruit_MAX31865(2, 3, 4, 5);
 
-#define RREF      4300.0
-#define RNOMINAL  1000.0
+#define RREF      430.0
+#define RNOMINAL  100.0
 
 void Max_Init(){
-  thermo.begin(MAX31865_3WIRE);
+  thermo.begin(MAX31865_4WIRE);
 }
 
 float Max_Read(){

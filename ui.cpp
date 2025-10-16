@@ -3,6 +3,7 @@
 Adafruit_SSD1306 display(OLED_RESET);
 
 void ui_init() {
+  Wire.begin(I2C_SDA, I2C_SCL); 
   display.begin(SSD1306_SWITCHCAPVCC, 0x3c);
   display.clearDisplay();
   display.display();
@@ -14,11 +15,12 @@ void ui_update() {
   display.setTextColor(WHITE);
   display.setCursor(0, 0);
   display.print("Internet: ");
-  display.println(WiFi.status() == WL_CONNECTED ? "Connected" : "Disconnected");
+  display.println(WiFi.status() == WL_CONNECTED ? "OK" : "FAIL!");
   display.print("Server: ");
-  display.println(client.connected() ? "Connected" : "Disconnected");
-  display.print("wifi: ");
-  display.print(ssid);
-  display.println(pass);
+  display.println(client.connected() ? "OK" : "FAIL!");
+  display.print("Username: ");
+  display.println(ssid);
+  display.print("Password: ");
+  display.print(pass);
   display.display();
-}
+} 
