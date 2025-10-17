@@ -16,7 +16,7 @@ void Gps_Update() {
 }
 
 double Gps_Read_Lat() {
-  if (gps.location.isValid()) {   // แทน isUpdated()
+  if (gps.location.isValid()) {   
     return gps.location.lat();
   }
   return 0.0;

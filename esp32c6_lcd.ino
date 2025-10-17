@@ -22,4 +22,5 @@ void loop() {
     publish_(x);
     lastPublish = millis();
   }
+  delay(3000);
 }

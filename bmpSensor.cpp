@@ -12,10 +12,7 @@ void bmp_Init(){
 }
 
 float bmp_Read(){
-  // คำสั่งอ่านค่าเหมือนเดิมเลย สะดวกมากๆ
   float pressure = bmp.readPressure();
-
-  // เช็คค่าเผื่อไว้เหมือนเดิม
   if (pressure <= 0 || isnan(pressure)) { 
     Serial.println("Failed to read from BMP sensor!");
     return -1;
