@@ -1,9 +1,8 @@
 #pragma once
-#include <WiFi.h>
+#include <WiFiManager.h>
 #include "mqtt.h"
 
-extern const char * ssid;
-extern const char * pass;
+extern WiFiManager wm;
 
 void wifi_init();
 void wifi_status();

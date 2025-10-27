@@ -1,11 +1,12 @@
 #include "Wifi_setup.h"
 
-const char * ssid = "NACK 2.4G";
-const char * pass = "0828231976";
+WiFiManager wm;
 
 void wifi_init(){
-  WiFi.disconnect();
-  WiFi.begin(ssid,pass);
+  bool connected = wm.autoConnect("Sensor_AP", "12345678"); 
+  if (!connected) {
+    ESP.restart(); 
+  }
 }
 
 void wifi_status(){

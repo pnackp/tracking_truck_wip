@@ -11,18 +11,13 @@ WiFiClientSecure espClient;
 PubSubClient client(espClient);
 
 void mqtt_setup() {
-  Serial.begin(115200);
   espClient.setInsecure();
   client.setServer(mqtt_server, mqtt_port);
 }
 
 void publish_(String &payload) {
   if (!client.connected()) {
-    if (client.connect("ESP32_Client", mqtt_user, mqtt_pass)) {
-      Serial.println("MQTT connected!");
-    } else {
-      Serial.print("MQTT connect failed, rc=");
-      Serial.println(client.state());
+    if (!client.connect("ESP32_Client", mqtt_user, mqtt_pass)) {
       return; 
     }
   }

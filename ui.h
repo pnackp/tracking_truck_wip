@@ -9,4 +9,4 @@
 #define OLED_RESET -1
 
 void ui_init();
-void ui_update();
+void ui_update(float temp);

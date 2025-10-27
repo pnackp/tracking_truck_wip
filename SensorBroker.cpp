@@ -17,11 +17,11 @@ String sensor_value() {
   StaticJsonDocument<200> doc; 
   doc["latitude"] = lat;
   doc["longitude"] = lon;
-  doc["temperature"] = temp;    
+  doc["temperature"] = temp - 1.2;    
   doc["pressure"] = pressure / 100;    
   doc["temp-out"] = temp_o;
   String result;
   serializeJson(doc, result);
-  ui_update();
+  ui_update(temp - 1.2);
   return result;  
 }

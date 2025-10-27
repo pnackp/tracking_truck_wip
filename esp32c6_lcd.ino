@@ -3,6 +3,9 @@
 #include "SensorBroker.h"
 
 void setup() {
+  Serial.begin(115200);
+  ui_init();
+  ui_update(0);
   wifi_init();
   Sensor_Init();
   while (WiFi.status() != WL_CONNECTED) {        
@@ -11,8 +14,8 @@ void setup() {
   mqtt_setup();
 }
 
-unsigned long lastPublish = 0;
-const unsigned long interval = 2000;
+uint32_t  lastPublish = 0;
+const uint16_t interval = 2000;
 
 void loop() {
   wifi_status();
@@ -22,5 +25,4 @@ void loop() {
     publish_(x);
     lastPublish = millis();
   }
-  delay(3000);
 }

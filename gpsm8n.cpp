@@ -6,7 +6,6 @@ HardwareSerial gpsSerial(1);
 
 void Gps_Init() {
   gpsSerial.begin(GPSBaud, SERIAL_8N1, 19, 18);
-  Serial.begin(115200);
 }
 
 void Gps_Update() {

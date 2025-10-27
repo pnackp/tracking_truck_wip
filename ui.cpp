@@ -9,7 +9,7 @@ void ui_init() {
   display.display();
 }
 
-void ui_update() {
+void ui_update(float temp) {
   display.clearDisplay();
   display.setTextSize(1);
   display.setTextColor(WHITE);
@@ -18,9 +18,8 @@ void ui_update() {
   display.println(WiFi.status() == WL_CONNECTED ? "OK" : "FAIL!");
   display.print("Server: ");
   display.println(client.connected() ? "OK" : "FAIL!");
-  display.print("Username: ");
-  display.println(ssid);
-  display.print("Password: ");
-  display.print(pass);
+  display.print("Temp: ");
+  display.print(temp);
+  display.println(" oc");
   display.display();
 } 
