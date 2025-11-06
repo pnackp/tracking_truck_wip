@@ -9,7 +9,10 @@ The transportation industry currently lacks widely available tracking systems ca
 - Accurate internal container temperature measurement: ±0.246°C average error  
 - High-accuracy position tracking: 2.11 m average error  
 - Continuous operation: ~51.3 hours using a 10,000 mAh power supply  
-- Low hardware cost and zero software costs  
+- Low hardware cost and zero software costs
+
+  <img width="274" height="149" alt="ภาพ" src="https://github.com/user-attachments/assets/8b450946-4441-4837-aa4e-470eed23ca03" />
+
 
 ## Note
 This is a preliminary research project. The full manuscript is under review.  
