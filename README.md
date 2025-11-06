@@ -1,5 +1,16 @@
-<h1>An IoT-Based Tracking System for Refrigerated Food Transportation </h1>
-<h2>With microcontroller </h2>
+# IoT-Based Tracking System for Refrigerated Food Transportation
 
-<a>The transportation industry currently lacks readily available tracking systems capable of monitoring frozen goods temperature, as such systems are not widely distributed, leading to high import costs and affecting product quality. To solve this, the researchers developed a prototype system using microcontrollers to transmit sensor data via IoT networks for real-time display. Results demonstrate the developed system can accurately measure internal container temperature ±0.246°C average error and track position with high accuracy 2.11 m average error. Additionally, the system operates continuously for approximately 51.3 hours with a 10,000 mAh power supply, featuring a low hardware cost that proves highly cost-effective given the achieved performance, alongside zero software costs. Consequently, this system is suitable for further application in industries requiring position tracking and temperature monitoring.<a>
+## Overview
+This repository contains source code and documentation for a microcontroller-based IoT system developed to monitor the temperature and position of refrigerated goods during transportation.  
 
+The transportation industry currently lacks widely available tracking systems capable of monitoring frozen goods temperature, leading to high import costs and affecting product quality. To address this, the researchers developed a prototype system using microcontrollers to transmit sensor data via IoT networks for real-time display.  
+
+## Key Results
+- Accurate internal container temperature measurement: ±0.246°C average error  
+- High-accuracy position tracking: 2.11 m average error  
+- Continuous operation: ~51.3 hours using a 10,000 mAh power supply  
+- Low hardware cost and zero software costs  
+
+## Note
+This is a preliminary research project. The full manuscript is under review.  
+Do **not copy, distribute, or cite** without the author's permission.
