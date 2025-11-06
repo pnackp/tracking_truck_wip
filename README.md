@@ -11,7 +11,7 @@ The transportation industry currently lacks widely available tracking systems ca
 - Continuous operation: ~51.3 hours using a 10,000 mAh power supply  
 - Low hardware cost and zero software costs
 
-  <img width="600" height="600" alt="ภาพ" src="https://github.com/user-attachments/assets/8b450946-4441-4837-aa4e-470eed23ca03" />
+<img width="274" height="149" alt="ภาพ" src="https://github.com/user-attachments/assets/53470c46-d41e-4532-b786-09fb78ef8436" />
 
 
 ## Note
